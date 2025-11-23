@@ -7,14 +7,14 @@ A modern, responsive website for Nuat Thai Foot & Body Massage built with Next.j
 - **Framework:** Next.js 14 (App Router)
 - **Styling:** Tailwind CSS
 - **Language:** TypeScript
-- **Deployment:** Netlify (Static Site Generation)
+- **Deployment:** Vercel (Static Site Generation)
 
 ## Features
 
 - Responsive design (mobile-first)
 - Static Site Generation for optimal performance
 - SEO optimized with meta tags
-- Contact form with Netlify Forms integration
+- Contact form with Formspree integration
 - Modern, clean UI with brand colors
 
 ## Pages
@@ -55,24 +55,32 @@ The static files will be generated in the `out` directory.
 
 ## Deployment
 
-### Netlify
+### Vercel
 
-1. Connect your repository to Netlify
-2. Build settings are configured in `netlify.toml`:
-   - Build command: `yarn build`
-   - Publish directory: `out`
-3. Deploy!
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) and sign in
+3. Click "Import Project" and select your GitHub repository
+4. Vercel auto-detects Next.js - no configuration needed
+5. Click "Deploy"
 
 ### Manual Deployment
 
 1. Run `yarn build`
 2. Upload the contents of the `out` directory to your static hosting provider
 
-## Contact Form
+## Contact Form Setup
 
-The contact form uses Netlify Forms for serverless form handling. When deployed to Netlify, forms are automatically detected and processed.
+The contact form uses [Formspree](https://formspree.io) for serverless form handling.
 
-For local development, form submissions will not work - deploy to Netlify to test form functionality.
+### To configure:
+
+1. Create a free account at [formspree.io](https://formspree.io)
+2. Create a new form and copy the form ID
+3. Update `components/ui/ContactForm.tsx`:
+   - Replace `YOUR_FORM_ID` with your actual Formspree form ID
+   - Example: `https://formspree.io/f/xabcdefg`
+
+For local development, form submissions will be sent to Formspree directly.
 
 ## Brand Colors
 
@@ -105,8 +113,7 @@ For local development, form submissions will not work - deploy to Netlify to tes
 ├── public/
 │   └── images/             # Static images
 ├── tailwind.config.ts
-├── next.config.js
-└── netlify.toml
+└── next.config.js
 ```
 
 ## License

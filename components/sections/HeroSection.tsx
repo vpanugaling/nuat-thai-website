@@ -7,8 +7,8 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-spa.jpg"
-          alt="Relaxing spa atmosphere"
+          src="/images/hero-thai-massage.jpg"
+          alt="Traditional Thai massage using acupressure techniques"
           fill
           className="object-cover"
           priority
@@ -19,6 +19,9 @@ export default function HeroSection() {
       {/* Content */}
       <div className="container-custom relative z-10 py-20">
         <div className="max-w-3xl">
+          <p className="text-lg md:text-xl text-accent italic mb-4 font-medium">
+            &ldquo;There is no instrument more precise than human hand&rdquo;
+          </p>
           <h1 className="heading-primary text-white mb-6">
             Authentic Thai Massage & Aromatherapy
           </h1>

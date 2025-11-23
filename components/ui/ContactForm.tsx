@@ -51,13 +51,11 @@ export default function ContactForm() {
     setStatus('loading')
 
     try {
-      const response = await fetch('/', {
+      // TODO: Replace YOUR_FORM_ID with your Formspree form ID from https://formspree.io
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'form-name': 'contact',
-          ...formData,
-        }).toString(),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       })
 
       if (response.ok) {
@@ -97,20 +95,9 @@ export default function ContactForm() {
 
   return (
     <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
       className="space-y-6"
     >
-      <input type="hidden" name="form-name" value="contact" />
-      <p className="hidden">
-        <label>
-          Don&apos;t fill this out: <input name="bot-field" />
-        </label>
-      </p>
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
