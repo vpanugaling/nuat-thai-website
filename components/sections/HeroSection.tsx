@@ -29,14 +29,9 @@ export default function HeroSection() {
             Experience stress relief and relaxation through our professional
             acupressure techniques. Serving Cebu since 2005.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <Button href="/contact" variant="primary" size="lg">
-              Book Now
-            </Button>
-            <Button href="/franchising" variant="outline" size="lg">
-              Franchise Opportunities
-            </Button>
-          </div>
+          <Button href="/franchising" variant="primary" size="lg">
+            Franchise Opportunities
+          </Button>
         </div>
       </div>
     </section>
