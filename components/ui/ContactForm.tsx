@@ -7,7 +7,7 @@ interface FormData {
   name: string
   email: string
   phone: string
-  service: string
+  bestTime: string
   message: string
 }
 
@@ -16,7 +16,7 @@ export default function ContactForm() {
     name: '',
     email: '',
     phone: '',
-    service: '',
+    bestTime: '',
     message: '',
   })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -60,7 +60,7 @@ export default function ContactForm() {
 
       if (response.ok) {
         setStatus('success')
-        setFormData({ name: '', email: '', phone: '', service: '', message: '' })
+        setFormData({ name: '', email: '', phone: '', bestTime: '', message: '' })
       } else {
         setStatus('error')
       }
@@ -83,7 +83,7 @@ export default function ContactForm() {
     return (
       <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
         <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg className="w-8 h-8 text-green-600\" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -153,24 +153,21 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-            Service Interest
+          <label htmlFor="bestTime" className="block text-sm font-medium text-gray-700 mb-2">
+            Best Time to Contact You
           </label>
           <select
-            id="service"
-            name="service"
-            value={formData.service}
+            id="bestTime"
+            name="bestTime"
+            value={formData.bestTime}
             onChange={handleChange}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
           >
-            <option value="">Select a service</option>
-            <option value="foot-massage">Foot Massage</option>
-            <option value="body-massage">Body Massage</option>
-            <option value="swedish-massage">Swedish Massage</option>
-            <option value="aromatherapy">Aromatherapy</option>
-            <option value="hot-oil">Hot Oil Massage</option>
-            <option value="franchise">Franchise Inquiry</option>
-            <option value="other">Other</option>
+            <option value="">Select preferred time</option>
+            <option value="morning">Morning (9AM - 12PM)</option>
+            <option value="afternoon">Afternoon (12PM - 5PM)</option>
+            <option value="evening">Evening (5PM - 9PM)</option>
+            <option value="anytime">Anytime</option>
           </select>
         </div>
       </div>

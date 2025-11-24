@@ -220,9 +220,9 @@ export default function MissionVisionPage() {
             ].map((value) => (
               <div
                 key={value}
-                className="bg-white/10 backdrop-blur rounded-xl p-6 text-center"
+                className="bg-white/10 backdrop-blur rounded-xl p-6 flex items-center justify-center"
               >
-                <span className="text-accent font-bold text-lg">{value}</span>
+                <span className="text-accent font-bold text-lg text-center">{value}</span>
               </div>
             ))}
           </div>
